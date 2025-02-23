@@ -1,4 +1,5 @@
 # ALU_SigmaBits_Version1
+Por Uriel Crespo, Gael Leyva e Imanol Barrientos
 ALU (Unidad Aritmético-Lógica) - Primera Versión Simple
 Este proyecto implementa una Unidad Aritmético-Lógica (ALU) básica que realiza operaciones sobre dos números de 4 bits. Esta es la primera versión simple de la ALU, que soporta las siguientes operaciones, seleccionadas mediante un interruptor de control (SWITCH_MODE):
 
