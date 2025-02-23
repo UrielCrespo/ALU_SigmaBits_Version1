@@ -1,0 +1,44 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY Evidencia_Reto1_SigmaBits IS
+	PORT(
+	NUM_1 : IN STD_LOGIC_VECTOR (3 DOWNTO 0); --Primer número a comparar
+	NUM_2 : IN STD_LOGIC_VECTOR (3 DOWNTO 0); --Segundo número a comparar
+	SWITCH_MODE : IN STD_LOGIC_VECTOR (1 DOWNTO 0);	--00 -> SUMA
+																	--01 -> RESTA
+																	--10 -> AND
+																	--11 -> OR
+	D_RESULTADO_SR1 : OUT STD_LOGIC_VECTOR (6 DOWNTO 0); --Display 1 del resultado suma/resta
+	D_RESULTADO_SR2 : OUT STD_LOGIC_VECTOR (6 DOWNTO 0); --Display 2 del resultado suma/resta
+	LED_RESULTADO : OUT STD_LOGIC_VECTOR (3 DOWNTO 0); --Encendido de LEDs para AND/OR
+	LED_COUT_SIGN : OUT STD_LOGIC --LED de overflow/signo en suma/resta
+	);
+END Evidencia_Reto1_SigmaBits;
+
+
+ARCHITECTURE BEHAVIOR OF Evidencia_Reto1_SigmaBits IS
+
+	COMPONENT SUMADOR_RESTADOR 
+	PORT(
+		NUM1, NUM2 : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+		MODO : IN STD_LOGIC;
+		NUMR : OUT STD_LOGIC_VECTOR (3 DOWNTO 0);
+		COUT : OUT STD_LOGIC
+	);
+	END COMPONENT;
+	
+	COMPONENT AND_OR_UNIT
+	PORT(
+		NUM_1 : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+		NUM_2 : IN STD_LOGIC_VECTOR (3 DOWNTO 0);
+		MODO : IN STD_LOGIC_VECTOR (1 DOWNTO 0);
+		OUTPUTS : OUT STD_LOGIC_VECTOR (3 DOWNTO 0)
+	);
+	END COMPONENT;
+	
+	
+	
+BEGIN
+
+END BEHAVIOR;
